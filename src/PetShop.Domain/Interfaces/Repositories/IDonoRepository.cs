@@ -9,5 +9,9 @@ namespace PetShop.Domain.Interfaces.Repositories
     public interface IDonoRepository
     {
         Task<IEnumerable<Dono>> ObterTodosAsync();
+        Task<IEnumerable<Dono?>> ObterPorNome(string nomeDono);
+        Task AdicionarAsync(Dono dono);
+        void Atualizar(Dono dono);
+        Task DeletarAsync(int id);
     }
 }

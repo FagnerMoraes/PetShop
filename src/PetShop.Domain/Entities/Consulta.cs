@@ -9,12 +9,12 @@ public class Consulta : Entity
     public DateTime DataConsulta { get; private set; }
     public TimeSpan HorarioConsulta { get; private set; }
 
+    public Pet Pet{get;}
+    public Veterinario Veterinario{get;}
+
     public ICollection<ProcimentoDaConsulta> ProcedimentosDasConsultas {get; set;}
 
-    protected Consulta()
-    {
-
-    }
+    protected Consulta() { }
     
     public Consulta(int id,int petId, int veterinarioId, DateTime dataConsulta, TimeSpan horarioConsulta)
     {

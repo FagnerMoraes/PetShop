@@ -18,6 +18,29 @@ namespace PetShop.Data.Repositories
             _context = context;
         }
 
+        public async Task AdicionarAsync(Dono dono) {
+            await _context.Donos.AddAsync(dono);
+            await _context.SaveChangesAsync();
+        }
+             
+
+        public void Atualizar(Dono dono)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeletarAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<Dono?>> ObterPorNome(string nomeDono)
+        {
+            return await _context.Donos
+                .Where(x => x.Nome.Equals(nomeDono))
+                .ToListAsync();
+        } 
+
         public async Task<IEnumerable<Dono>> ObterTodosAsync() 
         => await _context.Donos.AsNoTracking().ToListAsync(); 
     }
