@@ -35,11 +35,11 @@ namespace PetShop.Data.Repositories
         }
 
         public async Task<IEnumerable<Dono?>> ObterPorNome(string nomeDono)
-        {
-            return await _context.Donos
-                .Where(x => x.Nome.Equals(nomeDono))
+        => await _context.Donos
+                .Where(x => x.Nome.PrimeiroNome.Contains(nomeDono))
+                .AsNoTracking()
                 .ToListAsync();
-        } 
+         
 
         public async Task<IEnumerable<Dono>> ObterTodosAsync() 
         => await _context.Donos.AsNoTracking().ToListAsync(); 
