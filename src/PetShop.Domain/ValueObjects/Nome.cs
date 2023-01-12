@@ -11,9 +11,4 @@ public class Nome
 
     public string PrimeiroNome { get; set; }
     public string Sobrenome { get; set; }
-
-    public override string ToString()
-    {
-        return $"{PrimeiroNome} {Sobrenome}";
-    }
 }
