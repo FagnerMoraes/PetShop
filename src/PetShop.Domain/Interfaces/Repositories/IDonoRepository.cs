@@ -11,7 +11,7 @@ namespace PetShop.Domain.Interfaces.Repositories
         Task<IEnumerable<Dono>> ObterTodosAsync();
         Task<IEnumerable<Dono?>> ObterPorNome(string nomeDono);
         Task AdicionarAsync(Dono dono);
-        void Atualizar(Dono dono);
+        Task Atualizar(Dono dono);
         Task DeletarAsync(int id);
     }
 }

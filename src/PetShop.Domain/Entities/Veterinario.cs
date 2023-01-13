@@ -8,7 +8,9 @@ namespace PetShop.Domain.Entities;
     public ICollection<Consulta> Consultas {get; set;}
 
     protected Veterinario(){}
-    public Veterinario(Nome nome) : this(default,nome) { }
+    public Veterinario(Nome nome) : this(default,nome) {
+        Status = true;
+     }
     public Veterinario(int id, Nome nome)
     {
         Id = id;

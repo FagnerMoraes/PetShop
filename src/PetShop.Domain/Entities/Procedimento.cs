@@ -12,7 +12,9 @@ public class Procedimento : Entity
 
     protected Procedimento() { }
     public Procedimento(string nomeProcedimento, decimal valorProcedimento) :
-        this(default, nomeProcedimento, valorProcedimento) { }
+        this(default, nomeProcedimento, valorProcedimento) {
+            Status = true;
+         }
     public Procedimento(int id, string nomeProcedimento, decimal valorProcedimento)
     {
         Id = id;

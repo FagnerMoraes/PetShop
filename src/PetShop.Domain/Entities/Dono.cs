@@ -21,6 +21,8 @@ public class Dono : Entity
     }
 
     public Dono(Nome nome, string telefone, Endereco endereco)
-            : this(default, nome, telefone, endereco) { }
+            : this(default, nome, telefone, endereco) {
+        Status = true;
+    }
 
 }

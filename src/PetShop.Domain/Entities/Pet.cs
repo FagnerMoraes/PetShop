@@ -13,7 +13,9 @@ namespace PetShop.Domain.Entities
 
         protected Pet() { }
         public Pet(int donoId, string nome)
-            : this(default, donoId, nome) { }
+            : this(default, donoId, nome) {
+                Status = true;
+             }
         public Pet(int id, int donoId, string nome)
         {
             Id = id;

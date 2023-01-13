@@ -26,7 +26,9 @@ public class Consulta : Entity
     }
 
     public Consulta(int petId, int veterinarioId, DateTime dataConsulta, TimeSpan horarioConsulta) :
-            this(default,petId,veterinarioId,dataConsulta,horarioConsulta) { }
+            this(default,petId,veterinarioId,dataConsulta,horarioConsulta) { 
+                Status = true;
+            }
 
 
 }

@@ -17,5 +17,7 @@ public class ProcimentoDaConsulta : Entity
     }
 
     public ProcimentoDaConsulta(int procedimentoId, int consultaId)
-    : this(default,procedimentoId,consultaId,DateTime.Now) { }
+    : this(default,procedimentoId,consultaId,DateTime.Now) {
+        Status = true;
+     }
 }
