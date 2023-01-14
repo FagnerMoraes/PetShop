@@ -4,23 +4,23 @@ namespace PetShop.Domain.Entities
 {
     public class Pet: Entity
     {
-        public int DonoId { get; private set; }
-        public string Nome { get; private set; }
+        public int PetOwnerId { get; private set; }
+        public string Name { get; private set; }
+        public PetOwner? PetOwner { get; }
 
-        public Dono Dono { get; }
-
-        public ICollection<Consulta> Consultas {get; set;}
+        public ICollection<VetCare> VetCares { get;}
 
         protected Pet() { }
-        public Pet(int donoId, string nome)
-            : this(default, donoId, nome) {
+        public Pet(int petOwnerId, string name)
+            : this(default, petOwnerId, name) {
                 Status = true;
-             }
-        public Pet(int id, int donoId, string nome)
+                CreatedAt = DateTime.Now;
+        }
+        public Pet(int id, int petOwnerId, string name)
         {
             Id = id;
-            DonoId = donoId;
-            Nome = nome;
+            PetOwnerId = petOwnerId;
+            Name = name;
         }
 
     }

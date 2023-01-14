@@ -5,20 +5,20 @@ using PetShop.Domain.Entities;
 
 namespace PetShop.Data.Configuration;
 
-public class VeterinarioConfiguration : IEntityTypeConfiguration<Veterinario>
+public class VetConfiguration : IEntityTypeConfiguration<Vet>
 {
-    public void Configure(EntityTypeBuilder<Veterinario> builder)
+    public void Configure(EntityTypeBuilder<Vet> builder)
     {
         builder.ToTable("veterinario");
 
         builder.OwnsOne(x => x.Nome)
-            .Property(p => p.PrimeiroNome)
+            .Property(p => p.FirstName)
             .HasColumnName("primeiro_nome")
             .IsRequired()
             .HasMaxLength(15);
 
         builder.OwnsOne(x => x.Nome)
-            .Property(p => p.Sobrenome)
+            .Property(p => p.LastName)
             .HasColumnName("sobrenome")
             .IsRequired()
             .HasMaxLength(100);

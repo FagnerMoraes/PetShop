@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<PSContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PSConnection")));
 
-builder.Services.AddScoped<IDonoRepository,DonoRepository>();
+builder.Services.AddScoped<IPetOwnerRepository,PetOwnerRepository>();
 
 var app = builder.Build();
 

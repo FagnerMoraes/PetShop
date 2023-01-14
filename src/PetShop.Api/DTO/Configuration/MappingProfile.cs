@@ -7,9 +7,9 @@ namespace PetShop.Api.DTO.Configuration;
     {
         public MappingProfile()
         {
-        CreateMap<Dono, DonoDTO>().ReverseMap();
-        CreateMap<Nome, NomeDTO>().ReverseMap();
-        CreateMap<Endereco, EnderecoDTO>().ReverseMap();
+        CreateMap<PetOwner, PetOwnerDTO>().ReverseMap();
+        CreateMap<Name, NameDTO>().ReverseMap();
+        CreateMap<Adress, AdressDTO>().ReverseMap();
 
     }
     }

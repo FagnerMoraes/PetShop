@@ -5,9 +5,9 @@ using PetShop.Domain.Entities;
 
 namespace PetShop.Data.Configuration;
 
-public class ProcedimentoConfiguration : IEntityTypeConfiguration<Procedimento>
+public class ProcedureConfiguration : IEntityTypeConfiguration<Procedure>
 {
-    public void Configure(EntityTypeBuilder<Procedimento> builder)
+    public void Configure(EntityTypeBuilder<Procedure> builder)
     {
         builder.ToTable("procedimento");
 

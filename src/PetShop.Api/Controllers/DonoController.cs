@@ -14,33 +14,33 @@ namespace PetShop.Api.Controllers
     [Route("api/[controller]")]
     public class DonoController : ControllerBase
     {
-        private readonly IDonoRepository _donoRepository;
+        private readonly IPetOwnerRepository _donoRepository;
         private readonly IMapper _mapper;
 
-        public DonoController(IDonoRepository donoRepository, IMapper mapper)
+        public DonoController(IPetOwnerRepository donoRepository, IMapper mapper)
         {
             _donoRepository = donoRepository;
             _mapper = mapper;
         }
 
         [HttpGet("consultar-todos")]
-        public async Task<ActionResult<IEnumerable<DonoDTO>>> ObterTodos(){
-            var donos = await _donoRepository.ObterTodosAsync();                       
-            var donoDTO = donos.Select(dono => _mapper.Map<DonoDTO>(dono));           
-            return Ok(donoDTO);
+        public async Task<ActionResult<IEnumerable<PetOwnerDTO>>> Get(){
+            var petOwners = await _donoRepository.GeAllAsync();                       
+            var petOwnersDTO = petOwners.Select(petOwner => _mapper.Map<PetOwnerDTO>(petOwner));           
+            return Ok(petOwnersDTO);
         }
 
         [HttpGet("consultar-nome")]
-        public async Task<ActionResult<IEnumerable<DonoDTO>>> ObterPorNome(string nome){
-            var donos = await _donoRepository.ObterPorNome(nome);
-            var donoDTO = donos.Select(dono => _mapper.Map<DonoDTO>(dono));           
+        public async Task<ActionResult<IEnumerable<PetOwnerDTO>>> GetByName(string nome){
+            var donos = await _donoRepository.GetByNameAsync(nome);
+            var donoDTO = donos.Select(dono => _mapper.Map<PetOwnerDTO>(dono));           
             return Ok(donoDTO);
         }
 
         [HttpPost("cadastrar")]
-        public async Task<ActionResult<Dono>> CadastrarDono([FromBody]DonoDTO donoDTO){
-            var dono = _mapper.Map<Dono>(donoDTO);
-            await _donoRepository.AdicionarAsync(dono);
+        public async Task<ActionResult<PetOwner>> Post([FromBody]PetOwnerDTO donoDTO){
+            var dono = _mapper.Map<PetOwner>(donoDTO);
+            await _donoRepository.CreateAsync(dono);
             return Ok();
         }
 

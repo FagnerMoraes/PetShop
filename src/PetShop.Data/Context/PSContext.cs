@@ -16,11 +16,11 @@ namespace PetShop.Data.Context
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
-        public DbSet<Consulta> Consultas {get; set;}
-        public DbSet<Dono> Donos {get; set;}
+        public DbSet<VetCare> VetCares { get; set;}
+        public DbSet<PetOwner> PetOwners { get; set;}
         public DbSet<Pet> Pets {get; set;}
-        public DbSet<Procedimento> Procedimentos {get; set;}
-        public DbSet<ProcimentoDaConsulta> ProcedimentosDasConsultas {get; set;}
-        public DbSet<Veterinario> Veterinarios {get; set;}
+        public DbSet<Procedure> Procedures { get; set;}
+        public DbSet<CareProcedure> CareProcedures { get; set;}
+        public DbSet<Vet> Vets { get; set;}
     }
 }

@@ -7,12 +7,12 @@ using PetShop.Domain.ValueObjects;
 
 namespace PetShop.Api.DTO
 {
-    public class DonoDTO
+    public class PetOwnerDTO
     {
         public int Id { get; set; }
-        public NomeDTO Nome { get; set; }
-        public string Telefone { get; set; }
-        public EnderecoDTO Endereco { get;set; }
+        public NameDTO? Name { get; set; }
+        public string? CellPhone { get; set; }
+        public AdressDTO? Adress { get;set; }
 
     }
 }

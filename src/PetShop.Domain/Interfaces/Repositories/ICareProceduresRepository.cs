@@ -1,6 +1,6 @@
 namespace PetShop.Domain.Interfaces.Repositories
 {
-    public interface IProcedimentoDaConsultaRepository
+    public interface ICareProceduresRepository
     {
         
     }

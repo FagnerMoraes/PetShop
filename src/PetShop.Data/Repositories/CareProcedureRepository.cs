@@ -7,11 +7,11 @@ using PetShop.Domain.Interfaces.Repositories;
 
 namespace PetShop.Data.Repositories
 {
-    public class ProcedimentoDaConsultaRepository : IProcedimentoDaConsultaRepository
+    public class CareProcedureRepository : ICareProceduresRepository
     {
         private readonly PSContext _context;
 
-        public ProcedimentoDaConsultaRepository(PSContext context)
+        public CareProcedureRepository(PSContext context)
         {
             _context = context;
         }

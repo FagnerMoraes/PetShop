@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace PetShop.Api.DTO
 {
-    public class NomeDTO
+    public class NameDTO
     {
-        public string PrimeiroNome { get; set; }
-        public string SobreNome { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
     }
 }

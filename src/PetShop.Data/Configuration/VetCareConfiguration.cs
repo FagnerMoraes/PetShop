@@ -9,10 +9,10 @@ using PetShop.Domain.Entities;
 
 namespace PetShop.Data.Configuration
 {
-    public class ConsultaConfiguration : IEntityTypeConfiguration<Consulta>
+    public class VetCareConfiguration : IEntityTypeConfiguration<VetCare>
     {
         
-        public void Configure(EntityTypeBuilder<Consulta> builder)
+        public void Configure(EntityTypeBuilder<VetCare> builder)
         {
             builder.ToTable("consulta");
             
