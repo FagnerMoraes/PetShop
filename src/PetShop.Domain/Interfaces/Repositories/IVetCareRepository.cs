@@ -5,9 +5,8 @@ namespace PetShop.Domain.Interfaces.Repositories
 {
     public interface IVetCareRepository
     {
-        Task<VetCare?> ObterPorDataConsultaAsync(DateTime dataConsulta);
-        Task AdicionarAsync(VetCare consulta);
-        void Atualizar(VetCare consulta);
-        Task DeletarAsync(int id);
+        Task<VetCare?> GetByVetCareDateAsync(DateTime vetCareDate);
+        Task CreateAsync(VetCare vetCare);
+        Task UpdateAsync(VetCare vetCare);
     }
 }

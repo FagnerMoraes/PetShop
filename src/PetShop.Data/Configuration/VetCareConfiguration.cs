@@ -16,11 +16,11 @@ namespace PetShop.Data.Configuration
         {
             builder.ToTable("consulta");
             
-            builder.Property(x => x.DataConsulta)
+            builder.Property(x => x.CareProcedureDate)
                 .HasColumnName("data_consulta")
                 .HasColumnType("date");
             
-            builder.Property(x => x.HorarioConsulta)
+            builder.Property(x => x.CareProcedureTime)
                 .HasColumnName("hora_consulta")
                 .HasColumnType("time");
         }

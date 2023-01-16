@@ -29,6 +29,15 @@ namespace PetShop.Api.Controllers
             var petOwnersDTO = petOwners.Select(petOwner => _mapper.Map<PetOwnerDTO>(petOwner));           
             return Ok(petOwnersDTO);
         }
+        [HttpGet("consultar-um-dono")]
+        public async Task<ActionResult<IEnumerable<PetOwnerDTO>>> Get(int id)
+        {
+            var petOwner = await _donoRepository.GetById(id);
+            var petOwnerDTO = _mapper.Map<PetOwnerDTO>(petOwner);
+            if (petOwnerDTO is null)
+                return NotFound();
+            return Ok(petOwnerDTO);
+        }
 
         [HttpGet("consultar-nome")]
         public async Task<ActionResult<IEnumerable<PetOwnerDTO>>> GetByName(string nome){
@@ -38,10 +47,17 @@ namespace PetShop.Api.Controllers
         }
 
         [HttpPost("cadastrar")]
-        public async Task<ActionResult<PetOwner>> Post([FromBody]PetOwnerDTO donoDTO){
-            var dono = _mapper.Map<PetOwner>(donoDTO);
-            await _donoRepository.CreateAsync(dono);
-            return Ok();
+        public async Task<ActionResult<PetOwner>> Post([FromBody]PetOwnerDTO petOwnerDTO){
+            var petOwner = _mapper.Map<PetOwner>(petOwnerDTO);
+            await _donoRepository.CreateAsync(petOwner);
+            var success = _donoRepository.SaveAsync();
+            if (success.Result) {
+                var id = petOwner.Id;
+               return CreatedAtAction(nameof(Get),new { id = id }, id);
+            }  else  {
+                _donoRepository.Dispose();
+                return BadRequest();
+            }                        
         }
 
     }

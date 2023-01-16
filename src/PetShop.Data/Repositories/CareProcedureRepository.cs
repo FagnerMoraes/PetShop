@@ -7,7 +7,7 @@ using PetShop.Domain.Interfaces.Repositories;
 
 namespace PetShop.Data.Repositories
 {
-    public class CareProcedureRepository : ICareProceduresRepository
+    public class CareProcedureRepository : ICareProcedureRepository
     {
         private readonly PSContext _context;
 

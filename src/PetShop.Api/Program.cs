@@ -17,6 +17,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<PSContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PSConnection")));
 
 builder.Services.AddScoped<IPetOwnerRepository,PetOwnerRepository>();
+builder.Services.AddScoped<ICareProcedureRepository, CareProcedureRepository>();
+builder.Services.AddScoped<IPetRepository, PetRepository>();
+builder.Services.AddScoped<IProcedureRepository, ProcedureRepository>();
+builder.Services.AddScoped<IVetCareRepository, VetCareRepository>();
+builder.Services.AddScoped<IVetRepository, VetRepository>();
 
 var app = builder.Build();
 

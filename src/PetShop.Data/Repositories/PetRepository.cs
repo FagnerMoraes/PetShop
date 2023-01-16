@@ -17,22 +17,17 @@ namespace PetShop.Data.Repositories
             _context = context;
         }
 
-        public Task AdicionarAsync(Pet pet)
+        public Task CreateAsync(Pet pet)
         {
             throw new NotImplementedException();
         }
 
-        public void Atualizar(Pet pet)
+        public Task<IEnumerable<Pet>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task DeletarAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Pet>> ObterTodosAsync()
+        public Task UpdateAsync(Pet pet)
         {
             throw new NotImplementedException();
         }

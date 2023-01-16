@@ -11,13 +11,13 @@ public class VetConfiguration : IEntityTypeConfiguration<Vet>
     {
         builder.ToTable("veterinario");
 
-        builder.OwnsOne(x => x.Nome)
+        builder.OwnsOne(x => x.Name)
             .Property(p => p.FirstName)
             .HasColumnName("primeiro_nome")
             .IsRequired()
-            .HasMaxLength(15);
+            .HasMaxLength(50);
 
-        builder.OwnsOne(x => x.Nome)
+        builder.OwnsOne(x => x.Name)
             .Property(p => p.LastName)
             .HasColumnName("sobrenome")
             .IsRequired()

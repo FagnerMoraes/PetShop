@@ -13,23 +13,6 @@ public class VetCareRepository : IVetCareRepository
         _context = context;
     }
 
-    public Task AdicionarAsync(VetCare consulta)
-    {
-        throw new NotImplementedException();
-    }
+    
 
-    public void Atualizar(VetCare consulta)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task DeletarAsync(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<VetCare?> ObterPorDataConsultaAsync(DateTime dataConsulta)
-    {
-        throw new NotImplementedException();
-    }
 }
