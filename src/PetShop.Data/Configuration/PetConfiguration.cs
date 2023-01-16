@@ -10,7 +10,7 @@ public class PetConfiguration : IEntityTypeConfiguration<Pet>
     {
         builder.ToTable("pet");
 
-        builder.Property(x => x.Nome)
+        builder.Property(x => x.Name)
             .HasColumnName("nome")
             .IsRequired()
             .HasMaxLength(100);

@@ -26,27 +26,27 @@ public class PetOwnerConfiguration : IEntityTypeConfiguration<PetOwner>
             .IsRequired()
             .HasMaxLength(100);
 
-        builder.Property(x => x.Telefone)
+        builder.Property(x => x.CellPhone)
             .HasColumnName("telefone")
             .IsRequired()
             .HasMaxLength(11);
 
-        builder.OwnsOne(x => x.Endereco)
+        builder.OwnsOne(x => x.Adress)
             .Property(p => p.Street)
             .HasColumnName("rua_endereco")
             .IsRequired();
         
-        builder.OwnsOne(x => x.Endereco)
+        builder.OwnsOne(x => x.Adress)
             .Property(p => p.District)
             .HasColumnName("bairro_endereco")
             .IsRequired();
         
-        builder.OwnsOne(x => x.Endereco)
+        builder.OwnsOne(x => x.Adress)
             .Property(p => p.HouseNumber)
             .HasColumnName("numero_endereco")
             .IsRequired();
         
-        builder.OwnsOne(x => x.Endereco)
+        builder.OwnsOne(x => x.Adress)
             .Property(p => p.ZipCode)
             .HasColumnName("cep_endereco")
             .IsRequired();

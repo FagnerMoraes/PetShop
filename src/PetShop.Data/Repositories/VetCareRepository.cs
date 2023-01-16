@@ -13,6 +13,18 @@ public class VetCareRepository : IVetCareRepository
         _context = context;
     }
 
-    
+    public Task CreateAsync(VetCare vetCare)
+    {
+        throw new NotImplementedException();
+    }
 
+    public Task<VetCare?> GetByVetCareDateAsync(DateTime vetCareDate)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateAsync(VetCare vetCare)
+    {
+        throw new NotImplementedException();
+    }
 }

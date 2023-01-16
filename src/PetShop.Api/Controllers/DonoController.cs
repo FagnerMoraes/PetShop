@@ -30,7 +30,7 @@ namespace PetShop.Api.Controllers
             return Ok(petOwnersDTO);
         }
         [HttpGet("consultar-um-dono")]
-        public async Task<ActionResult<IEnumerable<PetOwnerDTO>>> Get(int id)
+        public async Task<ActionResult<PetOwnerDTO>> Get(int id)
         {
             var petOwner = await _donoRepository.GetById(id);
             var petOwnerDTO = _mapper.Map<PetOwnerDTO>(petOwner);

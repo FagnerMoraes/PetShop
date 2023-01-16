@@ -11,12 +11,12 @@ public class ProcedureConfiguration : IEntityTypeConfiguration<Procedure>
     {
         builder.ToTable("procedimento");
 
-        builder.Property(x => x.NomeProcedimento)
+        builder.Property(x => x.ProcedureName)
             .HasColumnName("nome_procedimento")
             .IsRequired()
             .HasMaxLength(200);
 
-        builder.Property(x => x.NomeProcedimento)
+        builder.Property(x => x.ProcedureValue)
             .HasColumnName("valor_procedimento")
             .IsRequired()
             .HasPrecision(18, 2);
