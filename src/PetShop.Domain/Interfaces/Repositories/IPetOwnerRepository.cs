@@ -5,7 +5,7 @@ namespace PetShop.Domain.Interfaces.Repositories;
 public interface IPetOwnerRepository : IDisposable
 {
     Task<IEnumerable<PetOwner>> GeAllAsync();
-    Task<PetOwner?> GetById(int id);
+    Task<PetOwner?> GetByIdAsync(int id);
     Task<IEnumerable<PetOwner?>> GetByNameAsync(string name);
     Task CreateAsync(PetOwner petOwner);
     void UpdateAsync(PetOwner petOwner);

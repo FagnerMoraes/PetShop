@@ -23,18 +23,17 @@ namespace PetShop.Data.Repositories
                 .Contains(name)).AsNoTracking().ToListAsync();
 
         public async Task<IEnumerable<PetOwner>> GeAllAsync() 
-            => await _context.PetOwners.AsNoTracking().ToListAsync();
-
-        public async Task<PetOwner?> GetById(int id)
             => await _context.PetOwners
-                .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Id == id);
-            
+                .AsNoTracking().ToListAsync();
+
+        public async Task<PetOwner?> GetByIdAsync(int id)
+            => await _context.PetOwners
+                .AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
 
         public async Task<bool> SaveAsync() 
             => await _context.SaveChangesAsync() > 0;
 
-        public void Dispose() =>
-        _context.Dispose();
+        public void Dispose() 
+            => _context.Dispose();
     }
 }
